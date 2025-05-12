@@ -1601,7 +1601,7 @@ def execute_high_level_action(
 
 def capture_screen_node(state: DeploymentState) -> DeploymentState:
     print("📸 Capturing and parsing current screen...")
-
+    state['device'] = state['task']['device']
     state_dict = dict(state)
     updated_state = capture_and_parse_screen(state_dict)
 
